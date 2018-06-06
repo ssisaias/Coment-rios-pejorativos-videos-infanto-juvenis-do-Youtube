@@ -1,0 +1,28 @@
+\section{RESULTADOS}
+
+Foram coletados 29.991 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, nos dias 27/09/2017, 28/09/2017 e 22/11/2017. Essa base tem um bom tamanho para o inicio das próximas etapas já mencionadas na seção 5, porém mais vídeos terão comentários coletados posteriormente.
+%Tem que ajeitar essas datas
+
+A tabela \ref{resultados-pre-comentarios} apresenta os dados detalhados da base adquirida até o momento.
+
+
+\begin{table}[H]
+	\Caption{\label{resultados-pre-comentarios} Comentários obtidos}%
+	
+\begin{tabular}{|p{5.5cm}|c|c|c|}
+\hline
+\textbf{Título do Vídeo} & \textbf{Visualizações} & \textbf{Data da Coleta} & \textbf{Comentários obtidos} \\ \hline
+PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 388.515.807 & 20/11/2017 12:00 & 11.669 \\ \hline
+Galinha Pintadinha 4 - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 90.240.721 & 20/11/2017 11:30 & 2.320 \\ \hline
+UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 112.389.836 & 27/09/2017 23:38 & 2.798 \\ \hline
+Pintinho Amarelinho - DVD Galinha Pintadinha & 496.289.054 & 28/09/2017 00:05 & 12.906 \\ \hline
+Galinha Pintadinha 3 - Trailer - OFICIAL & 13.849.870 & 27/09/2017 11:28 & 298 \\ \hline
+\end{tabular}
+
+\Fonte{Elaborado pelo autor}
+\end{table}
+
+
+As ferramentas que serão utilizadas para mineração e classificação serão o scikit-learn\footnote{http://scikit-learn.org} e Natural Language Toolkit\footnote{http://www.nltk.org/} (NLTK). NLTK é uma ferramenta para criação de programas em Python para processamento de linguagem humana. scikit-learn é um framework de aplicações multi-propósito, que pode também ser utilizado para pré-processamento, mineração e análise de dados. 
+
+%Como mencionado na seção 5, também será desenvolvida uma aplicação para o pré-processamento que irá substituir os caracteres unicode pelas letras %acentuadas. %Essa aplicação será integrada ao scikit se possivel?
