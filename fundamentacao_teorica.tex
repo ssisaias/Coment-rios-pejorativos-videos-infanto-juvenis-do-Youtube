@@ -82,28 +82,24 @@ SentiStrength é um classificador léxico que utiliza regras de linguística par
 
 Para cada texto classificado, a ferramenta gera dois valores inteiros que variam de 1 a 5 numa escala positiva e 1 a 5 numa escala negativa, sendo o valor 1, um indicador de neutralidade para o sentimento. Por exemplo, uma classificação que retorna 3, 5 indica uma nota 3 para o sentimento positivo e nota 5 para o sentimento negativo, nesse caso o texto tem mais força negativa do que positiva \cite{thelwall2012sentistrength}.
 
-Originalmente o classificador SentiStrength apenas trabalha com frases no idioma inglês, porém é possível adaptar seu dicionário para outros idiomas. O dicionário utilizado pelo autor neste trabalho, parte do dicionário português padrão que acompanha o SentiStrength, porém adaptado com mais palavrões e algumas correções, para uma detecção mais abrangente. O dicionário utilizado pode ser encontrado no Apêndice A Tabela \ref{appendix:dicionario-sentistrength}. Além disso, foi feito um script \footnote{https://gist.github.com/ssisaias/08b2c8494a4553612987c9d4ae94f86c} para converter a classificação gerada pela ferramenta, para a entrada esperada pelo classificador Nayve Bayes, essa etapa é descrita na seção de procedimentos.
+Originalmente o classificador SentiStrength apenas trabalha com frases no idioma inglês, porém é possível adaptar seu dicionário para outros idiomas. O dicionário utilizado pelo autor neste trabalho, parte do dicionário português padrão que acompanha o SentiStrength, porém adaptado com mais palavrões e algumas correções, para uma detecção mais abrangente. O dicionário utilizado pode ser encontrado no Apêndice A Tabela \ref{appendix:dicionario-sentistrength}. Além disso, foi feito um script \footnote{https://gist.github.com/ssisaias/08b2c8494a4553612987c9d4ae94f86c} para converter a classificação gerada pela ferramenta, para a entrada esperada pelo classificador Naïve Bayes, essa etapa é descrita na seção de procedimentos.
 
 %preciso melhorar essa definição de bayes.
 \subsection{Naive Bayes}
 Segundo \citeonline{tan2009DataMining}, uma técnica de classificação é uma maneira de construir modelos de classificação a partir de um \textit{Dataset}. Exemplos de classificadores são: Árvore de decisão; Rede Neurais; SVM (Support Vector Machines); e classificadores Naïve Bayes.
 Cada uma dessas técnicas aplica um algoritmo de aprendizagem para identificar o modelo que melhor descreve um relacionamento entre o conjunto de atributos e as classes dos dados de entrada. Sendo assim o modelo gerado pelo algoritmo de aprendizagem deve ser capaz de, a partir de um conjunto de entradas, classificar corretamente registros que não eram conhecidos até então.
 
-\citeonline{zhang2004optimalitybayes} afirma que Naïve Bayes é um dos algoritmos mais eficientes para \textit{machine learning} e mineração de textos.
+\citeonline{zhang2004optimalitybayes} afirma que Naïve Bayes é um dos algoritmos mais eficientes para \textit{machine learning} e mineração de textos. Esse algoritmo de aprendizagem supervisionado utiliza do Teorema de Bayes, porém considerando haver independência entre as \textit{features} (característica das variáveis de entrada) do conteúdo sendo classificado.
 
+O Teorema de Bayes com features dependentes pode ser definido da seguinte maneira:
 
+%%%Essa equação esta errada, olhar a referencia do paragrafo acima! 
 \begin{equation}
-\label{eq:bayes}
-P(\theta|\textbf{D}) = P(\theta ) \frac{P(\textbf{D} |\theta)}{P(\textbf{D})} ~~~~~|| I,
+\label{eq:bayes_classic}
+P(c|\textbf{D}) = P(c ) \frac{P(\textbf{D} |c)}{P(\textbf{D})}
 \end{equation}
 
-\begin{figure}[H] %use h para forçar que a figura fique abaixo do texto
-	\caption{\label{fig:figura-bayes} Rede Naïve Bayes}
-	\begin{center}
-	    \includegraphics[scale=1]{figuras/figura_5.PNG} % altere o atributo scale para o tamanho da figura
-	\end{center}
-	\legend{Fonte: \citeonline{ZhangandLi2007Bayes}}
-\end{figure}
+
 
 %% Old content
 \begin{comment}
