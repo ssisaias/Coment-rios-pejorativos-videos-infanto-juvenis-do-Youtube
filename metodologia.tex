@@ -10,8 +10,8 @@ Uma ilustração da ordem de execução dos passos é descrita na Figura \ref{fi
     \item Definição dos critérios de classificação
     \item Treinamento do modelo de classificação
     \item Avaliação do modelo de classificação
-    \item Indicar vídeos com comentários pejorativos
-    %% Se der tudo certo prox fim de semana, vou colocar aqui o plugin do chrome :D
+    \item Criação de extensão para Google Chrome
+    
 \end{itemize}
 
 \begin{figure}[H] %use h para forçar que a figura fique abaixo do texto
@@ -70,15 +70,15 @@ O modelo gerado é enfim testado utilizando os comentários que não foram utili
 A avaliação do modelo é feita através da ferramenta Scikit Learn, que fornece métodos de score prontos para as medidas de \textit{precision} e \textit{recall}. %preciso mencionar elas lá em cima, quando for falar do scikit. % talvez colocar alguma referencia aqui seja bom tb
 
 %O modelo de classificação gerado agora pode ser testado utilizando todos os comentários que foram coletados afim de chegar as conclusões sobre os tipos de comentários realizados em vídeos infantis e o grau de segurança da seção de comentários de cada vídeo.
-
+\begin{comment}
 \subsection{Indicar vídeos com comentários pejorativos}
 Nessa etapa, iremos avaliar os resultados do processamento dos comentários, agregando agora pelos vídeos dos quais foram coletados, indicando quais os vídeos tem maiores taxas de comentários pejorativos e que não são considerados seguros para crianças e adolescentes.
+\end{comment}
 
 
+\subsection{Criação de extensão para Google Chrome}
 
-\subsection{Criação de um plugin do Google Chrome}
-
-Ao obter um modelo de classificação, foi desenvolvida uma extensão do navegador da web Google Chrome que se utiliza de um \textit{Web Service} que retorna a margem de comentários negativos e positivos para o vídeo sendo assistido naquele momento. 
+Ao obter um modelo de classificação, e em posse da avaliação dos comentários obtidos, foi desenvolvida uma extensão do navegador da web Google Chrome que se utiliza de um \textit{Web Service} que retorna a margem de comentários negativos e positivos para o vídeo sendo assistido naquele momento. 
 
 Caso os comentários do vídeo ainda não tenham sido classificados, o serviço irá iniciar um procedimento automático de classificação, tornando os resultados disponíveis dentro de no máximo algumas horas.
 

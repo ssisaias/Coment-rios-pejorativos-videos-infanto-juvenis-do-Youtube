@@ -89,18 +89,39 @@ Originalmente o classificador SentiStrength apenas trabalha com frases no idioma
 Segundo \citeonline{tan2009DataMining}, uma técnica de classificação é uma maneira de construir modelos de classificação a partir de um \textit{Dataset}. Exemplos de classificadores são: Árvore de decisão; Rede Neurais; SVM (Support Vector Machines); e classificadores Naïve Bayes.
 Cada uma dessas técnicas aplica um algoritmo de aprendizagem para identificar o modelo que melhor descreve um relacionamento entre o conjunto de atributos e as classes dos dados de entrada. Sendo assim o modelo gerado pelo algoritmo de aprendizagem deve ser capaz de, a partir de um conjunto de entradas, classificar corretamente registros que não eram conhecidos até então.
 
-\citeonline{zhang2004optimalitybayes} afirma que Naïve Bayes é um dos algoritmos mais eficientes para \textit{machine learning} e mineração de textos. Esse algoritmo de aprendizagem supervisionado utiliza do Teorema de Bayes, porém considerando haver independência entre as \textit{features} (característica das variáveis de entrada) do conteúdo sendo classificado.
+Naïve Bayes é um dos algoritmos mais eficientes para \textit{machine learning} e mineração de textos. Esse algoritmo de aprendizagem supervisionado utiliza do Teorema de Bayes, porém considerando haver independência entre as \textit{features} (característica das variáveis de entrada) do conteúdo sendo classificado \cite{zhang2004optimalitybayes}.
 
-O Teorema de Bayes com features dependentes pode ser definido da seguinte maneira:
+De acordo com com \citeonline{zhang2004optimalitybayes}, o Teorema de Bayes com features dependentes pode ser definido da seguinte maneira, onde a probabilidade de um evento $\epsilon$ ser da classe $c$ é:
 
-%%%Essa equação esta errada, olhar a referencia do paragrafo acima! 
 \begin{equation}
 \label{eq:bayes_classic}
-P(c|\textbf{D}) = P(c ) \frac{P(\textbf{D} |c)}{P(\textbf{D})}
+ P(c|\epsilon) = P(c ) \frac{P(\epsilon |c)}{P(\epsilon)}
 \end{equation}
 
+$\epsilon$ pertence a classe $C = +$ se somente se:
+\begin{equation}
+\label{eq:bayes_classic}
+ {f_b}(\epsilon) =  \frac{P(C = + | \epsilon)}{P(C = - | \epsilon)} \geq 1
+\end{equation}
 
+onde ${f_b}(\epsilon)$ é um classificador Bayesiano.
 
+Se assumirmos que os atributos são independentes dados os valores de classe, ou seja:
+\begin{equation}
+\label{eq:naive_bayes}
+ {p}(\epsilon|c) =  {p}({x_1, x_2, ..., x_n}|c) = \prod_{i=1}^{n} {p}(x_i|c),
+\end{equation}
+
+O classificador resultante é:
+
+\begin{equation}
+\label{eq:bayes_classic}
+ {f_nb}(\epsilon) =  \frac{P(C = +)}{P(C = -)} \prod_{i=1}^{n} \frac{P({x_i} | C = +)}{P({x_i} | C = -)}
+\end{equation}
+
+A função ${f_nb}(\epsilon)$ é chamada de classificador Naive Bayes (naive Bayesian classifier).
+
+A utização do Naïve Bayes se dara através da ferramenta scikit-learn \citeonline{scikit-learn}, onde o classificador já está previamente implementado.
 %% Old content
 \begin{comment}
 
