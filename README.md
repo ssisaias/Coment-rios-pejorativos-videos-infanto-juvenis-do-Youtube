@@ -1,4 +1,16 @@
-# Template TCC 1 - Universidade Federal do Ceará
+# TCC 2  - Universidade Federal do Ceará - Campus Quixadá
+
+Baseado no template de TCC 1 do Alexsandro (créditos abaixo).
+
+Alterações e adições:
+- [x] resultados_preliminares.tex -> resultados.tex
+- [x] Conclusão
+- [x] Trabalhos futuros
+
+
+# Informação do template anterior:
+
+### Template TCC 1 - Universidade Federal do Ceará
 > Template para a produção do TCC 1 em latex.
 
 Template criado para facilitar a elaboração do TCC em latex para a Universidade Federal do Ceará
@@ -11,7 +23,7 @@ Template criado para facilitar a elaboração do TCC em latex para a Universidad
 * Estilo: ufc-abntex2.sty
 * Referências: bibtex/referencias.bib
 
-## Arquivos TCC 1
+### Arquivos TCC 1
 
 - [x] introducao.tex
 - [x] trabalhos_relacionados.tex
@@ -22,9 +34,9 @@ Template criado para facilitar a elaboração do TCC em latex para a Universidad
 - [x] resultados_preliminares.tex
 
 
-## Exemplo de Elementos
+### Exemplo de Elementos
 
-### Figura
+#### Figura
 ```tex
 \begin{figure}[H] %use h para forçar que a figura fique abaixo do texto
 	\caption{\label{fig:exemplo-2} Mapa mental das áreas de conhecimento}
@@ -39,4 +51,3 @@ Template criado para facilitar a elaboração do TCC em latex para a Universidad
 ## Meta
 
 Alexsandro Oliveira – sandrooliveira@gmail.com 
-
