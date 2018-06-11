@@ -1,19 +1,19 @@
 \section{INTRODUÇÃO}
 
 
-A internet é uma rede mundial que interliga milhões de computadores em todo o mundo, servindo como um grande fator de comunicação e integração social \cite{marioFalcao2015}. Todo os dias novas páginas na internet surgem, sejam de relacionamento, humor, entretenimento, notícias, ou redes sociais. Como exemplo temos: Facebook, Twitter, Instagram, Google+, Vimeo, DailyMotion e Youtube.
+A internet é uma rede mundial que interliga milhões de computadores em todo o mundo, servindo como um grande fator de comunicação e integração social \cite{marioFalcao2015}. Todo os dias, novas páginas na internet surgem, sejam de relacionamento, humor, entretenimento, notícias, ou redes sociais, como exemplo: Facebook, Twitter, Instagram, Google+, Vimeo, DailyMotion e Youtube.
 
 É pertinente que em nossa sociedade contemporânea, as pessoas estejam mais próximas da tecnologia, principalmente as crianças. 
-Essas crianças, adquirem habilidades diferentes das crianças de antigamente: enquanto uma criança da década de 80 possuía uma maior facilidade para construir ou modelar um brinquedo, as crianças da geração atual possuem habilidades para lidar com a informática, devido ao convívio rotineiro com a mesma \cite{marioFalcao2016}.
+Essas crianças adquirem habilidades diferentes das crianças de antigamente: enquanto uma criança da década de 80 possuía uma maior facilidade para construir ou modelar um brinquedo, as crianças da geração atual possuem habilidades para lidar com a informática, devido ao convívio rotineiro com a mesma \cite{marioFalcao2016}.
 
 % Motivação para utilização do Youtube
-A plataforma de vídeos Youtube é o segundo site mais acessado do mundo \cite{alexaYoutube}. Nela, é possível postar e compartilhar vídeos com uma enorme e abrangente gama de conteúdos, servindo também como site de buscas. É possível encontrar conteúdo musical, \textit{vlogs}, animações, curta-metragens, conteúdo educativo, conteúdo com público alvo adulto e conteúdo voltado especificamente ao público jovem e infantil. 
+A plataforma de vídeos Youtube é o segundo site mais acessado do mundo \cite{alexaYoutube}. Em tal plataforma, é possível postar e compartilhar vídeos com uma enorme e abrangente gama de conteúdos, servindo também como site de buscas. É possível encontrar conteúdo musical, \textit{vlogs}, animações, curta-metragens, conteúdo educativo, conteúdo com público alvo adulto e conteúdo voltado especificamente ao público jovem e infantil. 
 
 Como parte de suas características de rede social, o Youtube disponibiliza, em seus vídeos, a possibilidade de usuários comentarem. Porém tendo em vista as crianças e adolescentes estão conectadas na rede cada vez mais cedo \cite{EnyoGoncalves2017}, ao navegar pela plataforma, em vídeos infantis nota-se que há uma certa liberdade para realizar comentários de qualquer natureza, até mesmo ofensivos ou inapropriados para o público o qual o vídeo é destinado, um exemplo disso pode ser visto na Figura \ref{fig:youtube_comment}.
 
 % Qual a problemática dos comentários negativos em vídeos infantis. Era bom ter referências de artigos para isso. % ainda n achei
 % solution -> ECA
-Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral da criança e do adolescente, abrangendo a preservação da imagem, da identidade, da autonomia, dos valores, ideias e crenças, dos espaços e objetos pessoais." \cite{eca_lei}.  Assim podemos através da tecnologia buscar meios para proteger moralmente e psiquicamente o público mais jovem que utiliza a plataforma. %Esse final não ta legal %
+Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral da criança e do adolescente, abrangendo a preservação da imagem, da identidade, da autonomia, dos valores, ideias e crenças, dos espaços e objetos pessoais." \cite{eca_lei}.  Assim, é possível através da tecnologia buscar meios para proteger moralmente e psiquicamente o público mais jovem que utiliza a plataforma. %Esse final não ta legal %
 
 \begin{figure}[H] %use h para forçar que a figura fique abaixo do texto
 	\caption{\label{fig:youtube_comment} Comentário do Youtube}
@@ -24,14 +24,16 @@ Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O 
 %Verificar se precisa por a data aqui 
 \end{figure}
 
-A Figura \ref{fig:youtube_comment} foi retirada do vídeo \textbf{UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4}, um vídeo direcionado à crianças de 2 a 7 anos postado pelo canal \emph{Galinha Pintadinha} direcionado ao público infantil. %Explicar o comentário que pode ser visualizado e interpretado pela criança. Também seria bom referências para isso. %N.A. (28nov2017) não encontrei referências para "crianças palavrão"; checar os links abaixo:
+A Figura \ref{fig:youtube_comment} foi retirada do vídeo \textbf{UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4}, um vídeo direcionado à crianças de 2 a 7 anos postado pelo canal \emph{Galinha Pintadinha}, que é direcionado ao público infantil. %Explicar o comentário que pode ser visualizado e interpretado pela criança. Também seria bom referências para isso. %N.A. (28nov2017) não encontrei referências para "crianças palavrão"; checar os links abaixo:
 %http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2214.2011.01338.x/full
 %http://www.tandfonline.com/doi/abs/10.1080/01434630408666529
 %procurar tb por children+swear words.
 
 
-Dessa forma, o problema abordado neste trabalho é identificar comentários pejorativos semelhantes ao apresentado na Figura \ref{fig:youtube_comment} em vídeos infantis postados no Youtube. Para solucional tal problema, primeiramente será utilizado uma ferramenta própria para coleta dos comentários, seguido da utilização de técnicas de mineração de dados, e técnicas de classificação e análise dos dados. Um modelo será elaborado a fim de apontar os comentários pejorativos dos vídeos infantis, podendo assim, ser utilizado para futuramente elaborar meios de alertar os responsáveis e os pais sobre o nível de segurança dos vídeos que estão sendo exibidos às crianças. O modelo também poderá ser aplicado em qualquer vídeo do Youtube.  % Como tu vai fazer isso? Tem que explicar aqui. Para que? O que tu vai fazer com esses comentários? Soluções para denunciar os comentários.
+Dessa forma, o problema abordado neste trabalho é identificar comentários pejorativos semelhantes ao apresentado na Figura \ref{fig:youtube_comment} em vídeos infantis postados no Youtube. Para solucionar tal problema, primeiramente será utilizada uma ferramenta própria para coleta dos comentários, seguido da utilização de técnicas de mineração de dados, e técnicas de classificação e análise dos dados. Um modelo será elaborado a fim de apontar os comentários pejorativos dos vídeos infantis, podendo assim, ser utilizado para futuramente elaborar meios de alertar os responsáveis e os pais sobre o nível de segurança dos vídeos que estão sendo exibidos às crianças. O modelo também poderá ser aplicado em qualquer vídeo do Youtube.  % Como tu vai fazer isso? Tem que explicar aqui. Para que? O que tu vai fazer com esses comentários? Soluções para denunciar os comentários.
 % Para que e para quem  esse estudo vai servir? Escrever um parágrafo sobre isso.
+
+\textcolor{red}{nada do plugin foi mencionado,pq??}
 
 %Falar das ferramentas que serão utilizadas
 
@@ -43,4 +45,8 @@ Dessa forma, o problema abordado neste trabalho é identificar comentários pejo
 
 %Neste trabalho o idioma dos textos analisados é estritamente português, e na Seção 5 serão esclarecidos os critérios que são considerados para que um comentário seja classificado como pejorativo.
 
-Este trabalho está estruturado da seguinte forma. No Capítulo 2, serão apresentados os principais trabalhos relacionados, que tratam dos temas de mineração e de proteção de crianças online; No Capítulo 3 são apresentados os objetivos do trabalho; No Capítulo 4, apresento os principais conceitos que serão utilizados durante o andamento do projeto; O Capítulo 5, apresenta a metodologia de trabalho a ser utilizada; e o Capítulo 6, apresenta os dados preliminares da pesquisa.
+Este trabalho está estruturado da seguinte forma. No Capítulo 2, serão apresentados os principais trabalhos relacionados, que tratam dos temas de mineração e de proteção de crianças online; No Capítulo 3, são apresentados os objetivos do trabalho; No Capítulo 4, são apresentados os principais conceitos que são utilizados durante o projeto; O Capítulo 5 apresenta a metodologia de trabalho; e o Capítulo 6 apresenta \textcolor{blue}{dados preliminares da pesquisa.}
+
+\textcolor{red}{não deveria ser os resultados?}
+
+\textcolor{red}{mover objetivos e fundamentacao teorica para depois da introdução}

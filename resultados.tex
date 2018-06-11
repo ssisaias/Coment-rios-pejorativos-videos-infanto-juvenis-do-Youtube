@@ -1,0 +1,84 @@
+\section{RESULTADOS}
+
+Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, no período de 27 de Setembro de 2017 à 22 de Novembro de 2017 e no dia 15/05/2018. Por estar em posse de um dataset extenso, o autor não realizou coletas posteriores. 
+
+A tabela \ref{resultados-pre-comentarios} apresenta os dados detalhados da base adquirida.
+
+\begin{table}[H]
+	\Caption{\label{resultados-pre-comentarios} Comentários obtidos}%
+	
+\begin{tabular}{|p{5.5cm}|c|c|c|}
+\hline
+\textbf{Título do Vídeo} & \textbf{Visualizações} & \textbf{Data da Coleta} & \textbf{Comentários obtidos} \\ \hline
+PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 388.515.807 & 20/11/2017 12:00 & 11.669 \\ \hline
+Galinha Pintadinha 4 - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 90.240.721 & 20/11/2017 11:30 & 2.320 \\ \hline
+UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 112.389.836 & 27/09/2017 23:38 & 2.798 \\ \hline
+Pintinho Amarelinho - DVD Galinha Pintadinha & 496.289.054 & 28/09/2017 00:05 & 12.906 \\ \hline
+Galinha Pintadinha 3 - Trailer - OFICIAL & 13.849.870 & 27/09/2017 11:28 & 298 \\ \hline
+Não Faz Sentido! - Crepúsculo [+13] & 15.768.111 & 15/05/2018 07:14 & 57.103 \\ \hline
+% MEU MELHOR AMIGO - LUCCAS NETO & 14.762.043 & 11/06/2018 02:21 & 46.173 \\ \hline
+\end{tabular}
+
+\Fonte{Elaborado pelo autor}
+\end{table}
+
+Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser o adolescente, o grupo de treino e de testes da classificação partiu dele.
+
+Seguindo a métrica de 50\% de comentários para treino e teste do classificador, foram utilizados 32131 comentários para treino e 32130 comentários para teste. 
+
+Na Tabela \ref{resultados-precision} estão os valores de \textit{precision}, descritos por vídeo, após a classificação. Os valores são obtidos com o uso da biblioteca \textit{sklearn-metrics} \cite{scikit-learn}. A coluna \textbf{precision-pos} descreve a precisão de acerto do classificador para a classe positiva (ou neutra), enquanto a coluna \textbf{precision-neg} descreve a precisão de acerto do classficador para a classe negativa, onde estão os termos pejorativos.
+
+Na tabela \ref{resultados-recall} Estão os valores de \textit{recall}, também descritos por vídeo e classe. A coluns \textbf{recall-pos} descreve a pontuação de \textit{recall} para a classe posivita (ou neutra), enquanto a coluna \textbf{recall-neg} descreve a pontuação de recall para a classe negativa (termos pejorativos).
+
+
+\textit{Precision} pode ser definido como o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Positivos-Verdadeiros e Positivos-Negativos
+
+\begin{equation}
+\label{eq:precision-descr}
+ {P} = \frac{{T_p}}{{T_p}+{F_p}}
+\end{equation}
+
+Enquanto \textit{recall} é o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Posivitos-Verdadeiros e Falso-Negativos
+
+\begin{equation}
+\label{eq:recall-descr}
+ {P} = \frac{{T_p}}{{T_p}+{F_n}}
+\end{equation}
+
+\begin{table}[H]
+	\Caption{\label{resultados-precision} Resultados de \textit{precision}}%
+	
+\begin{tabular}{|p{5.5cm}|c|c|c|}
+\hline
+\textbf{Título do Vídeo} & \textbf{Classificados} & \textbf{precision-pos} & \textbf{precision-neg} \\ \hline
+PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 11.669 & 0.98 & 0.18 \\ \hline
+Galinha Pintadinha 4 - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.320 & 0.98 & 0.14 \\ \hline
+UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.798 & 0.98 & 0.16 \\ \hline
+Pintinho Amarelinho - DVD Galinha Pintadinha & 12.906 & 0.95 & 0.35 \\ \hline
+Galinha Pintadinha 3 - Trailer - OFICIAL & 298 & 0.95 & 0.14 \\ \hline
+Não Faz Sentido! - Crepúsculo [+13] & 31.130 & 0.88 & 0.71\\ \hline
+\end{tabular}
+
+\Fonte{Elaborado pelo autor}
+\end{table}
+
+\begin{table}[H]
+	\Caption{\label{resultados-recall} Resultados de \textit{recall}}%
+	
+\begin{tabular}{|p{5.5cm}|c|c|c|}
+\hline
+\textbf{Título do Vídeo} & \textbf{Classificados} & \textbf{recall-pos} & \textbf{recall-neg} \\ \hline
+PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 11.669 & 0.86 & 0.71 \\ \hline
+Galinha Pintadinha 4 - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.320 & 0.84 & 0.57 \\ \hline
+UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.798 & 0.81 & 0.64 \\ \hline
+Pintinho Amarelinho - DVD Galinha Pintadinha & 12.906 & 0.83 & 0.67 \\ \hline
+Galinha Pintadinha 3 - Trailer - OFICIAL & 298 & 0.78 & 0.48 \\ \hline
+Não Faz Sentido! - Crepúsculo [+13] & 31.130 & 0.83 & 0.79\\ \hline
+\end{tabular}
+
+\Fonte{Elaborado pelo autor}
+\end{table}
+
+\begin{comment}
+As ferramentas que serão utilizadas para mineração e classificação serão o scikit-learn\footnote{http://scikit-learn.org} e Natural Language Toolkit\footnote{http://www.nltk.org/} (NLTK). NLTK é uma ferramenta para criação de programas em Python para processamento de linguagem humana. scikit-learn é um framework de aplicações multi-propósito, que pode também ser utilizado para pré-processamento, mineração e análise de dados. 
+\end{comment}
