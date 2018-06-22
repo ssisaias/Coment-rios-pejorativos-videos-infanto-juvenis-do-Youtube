@@ -1,16 +1,16 @@
 \section{PROCEDIMENTOS METODOLÓGICOS}
 
-Para alcançar o objetivo de classificar os comentários pejorativos em vídeos infantis do Youtube, os passos a seguir serão realizados ao longo da execução do trabalho.
-Uma ilustração da ordem de execução dos passos é descrita na Figura \ref{fig:metodologia}
+Para alcançar o objetivo de classificar os comentários pejorativos em vídeos infantis do Youtube, os passos a seguir foram realizados ao longo da execução do trabalho.
+Uma ilustração da ordem de execução dos passos é descrita na Figura \ref{fig:metodologia}.
 
 \begin{itemize}
-    \item Escolha dos vídeos
-    \item Coleta de dados
-    \item Pré-Processamento
-    \item Definição dos critérios de classificação
-    \item Treinamento do modelo de classificação
-    \item Avaliação do modelo de classificação
-    \item Criação de extensão para Google Chrome
+    \item Escolha dos vídeos;
+    \item Coleta de dados;
+    \item Pré-Processamento;
+    \item Definição dos critérios de classificação;
+    \item Treinamento do modelo de classificação;
+    \item Avaliação do modelo de classificação;
+    \item Criação de extensão para Google Chrome;
     
 \end{itemize}
 
@@ -30,9 +30,8 @@ Uma ilustração da ordem de execução dos passos é descrita na Figura \ref{fi
 % Indicar os vídeos Pejorativos (5) xxxxxx
 % Avaliar o modelo de classificação (6) Avaliação do Modelo de Classificação
 \subsection{Escolha dos vídeos}
-O principal critério para que um vídeo seja escolhido para este trabalho, é que seu público alvo seja infantil ou adolescente. Naturalmente, quanto mais comentários o vídeo possuir, maior a quantidade de dados para análise estarão disponíveis, logo o ideal é buscar vídeos infantis que possuam um número expressivo de comentários, algo em torno de pelo menos mil. Porém nem sempre é possível encontrar vídeos com essa quantidade ideal de comentários, o que não impede que também sejam utilizados. 
+O principal critério para a escolha do vídeo para este trabalho, é que seu público alvo seja infantil ou adolescente. Naturalmente, quanto mais comentários o vídeo possuir, maior a quantidade de dados para análise, logo o ideal foi buscar vídeos infantis que apresentavam um número expressivo de comentários, em torno de pelo menos mil. Porém nem sempre foi possível encontrar vídeos com essa quantidade ideal de comentários, o que não impediu que também fossem utilizados. A popularidade do canal que postou o vídeo foi um fator  considerado, visto que um canal com maior popularidade também  possui vídeos com mais comentários.
 
-A popularidade do canal que postou o vídeo pode ser um fator a ser considerado, visto que um canal com maior popularidade também irá possuir vídeos com mais comentários.
 
 \subsection{Coleta de Dados}
 A fim de ter os dados para o ponto de partida da pesquisa e tendo em conta a grande quantidade de comentários em vídeos com público-alvo jovem, foi desenvolvida uma ferramenta em Python para coleta dos comentários em vídeos do Youtube. O objetivo da ferramenta é ser simples e objetiva na coleta desses comentários.
@@ -41,33 +40,40 @@ A aplicação desenvolvida pelo autor, utiliza a API do Youtube (Versão 3) e pe
 
 
 \subsection{Pré-Processamento}
-Uma vez que os dados armazenados não estão em formato adequado para extração do conhecimento, faz-se necessária a aplicação de métodos para \textit{extração e integração}, \textit{transformação},
+Uma vez que os dados armazenados não estão em formato adequado para extração do conhecimento, faz-se necessária a aplicação de métodos para \textit{extração, integração,} \textit{transformação},
 % ta mas o que é isso? ai vou preicsar olhar no referencial teórico e adaptar conforme o que eu fiz aqui!!!
 \textit{limpeza}, \textit{seleção e redução} de volume desses dados, antes da etapa de mineração \cite{morais2007mineraccao}.
 
-Inicialmente observa-se uma grande quantidade de comentários sem sentido em vídeos infantis no Youtube, compostos quase que inteiramente por espaços em branco ou símbolos e letras aleatórios. Em vídeos destinados à adolescentes, há menor ocorrência de comentários sem sentido. 
+Inicialmente, observa-se uma grande quantidade de comentários sem sentido em vídeos infantis no Youtube, compostos quase que inteiramente por espaços em branco ou símbolos e letras aleatórios. Em vídeos destinados à adolescentes, há menor ocorrência de comentários sem sentido. 
 
-Nesta etapa um script escrito em Python é executado para extrair somente os textos dos comentários obtidos através da ferramenta de extração. Em seguida, através da ferramenta NLTK, o pré-processamento é realizado: os acentos são removidos e os textos são tokenizados, através de um processo que remove palavras sem valor semântico para o classificador e reduz palavras com valor semântico ao seu radical.
+Nesta etapa, um \textit{script} escrito em Python foi executado para extrair somente os textos dos comentários obtidos através da ferramenta de extração. Em seguida, através da ferramenta NLTK, o pré-processamento foi realizado: os acentos foram removidos e os textos foram \textit{tokenizados}, através de um processo que remove palavras sem valor semântico para o classificador e reduz palavras com valor semântico ao seu radical.
 
-Vale notar que a API do Youtube também retorna o texto dos comentários contendo caracteres unicode, que representam letras acentuadas e alguns poucos símbolos, como apóstrofo (') e \textit{ampersand} (\&). Ao utilizar a versão 3 da linguagem Python, os caracteres unicode são automaticamente substituídos pelo caractere correspondente na língua portuguesa, podendo assim o texto continuar a ser pré-processado.
+Vale notar que a API do Youtube também retorna o texto dos comentários contendo caracteres unicode, que representam letras acentuadas e alguns poucos símbolos, como apóstrofo (') e \textit{ampersand} (\&). Ao utilizar a versão 3 da linguagem Python, os caracteres unicode são automaticamente substituídos pelo caractere correspondente na língua portuguesa, podendo assim os textos, seguirem adiante na etapas de processamento.
 
 
 \subsection{Definição dos Critérios de Classificação}
-%Até o momento a classificação será manual!
-A classificação dos comentários é definida manualmente, levando em consideração comentários de amostragem, que serão classificados como \textbf{pejorativos} ou \textbf{não pejorativos}. 
 
-Dado a enorme quantidade de comentários coletados, um dicionário de classificação também foi criado para a ferramenta \textbf{SentiStrength}, afim de facilitar a criação do grupo de treino para o modelo de classificação. % O dicionário pode ser verificado no apendice X. (colocar a referencia ao apendice aqui)
+A classificação dos comentários é definida manualmente, levando em consideração comentários de amostragem, que foram classificados como \textbf{pejorativos} ou \textbf{não pejorativos}. 
 
-Após a classificação manual e a classificação assistida utilizando a SentiStrength, um modelo será treinado para que possa classificar automaticamente os novos comentários obtidos do Youtube.
+Dado a enorme quantidade de comentários coletados, um dicionário de classificação também foi criado para a ferramenta \textbf{SentiStrength}, a fim de facilitar a criação do conjunto de treino a ser dado de entrada para gerar o modelo de classificação. % O dicionário pode ser verificado no apendice X. (colocar a referencia ao apendice aqui)
+
+Após a classificação manual e a classificação assistida utilizando a SentiStrength, um modelo foi treinado para que possa classificar automaticamente os novos comentários obtidos do Youtube.
 
 \subsection{Treinamento do Modelo de Classificação}
-O classificador Naïve Bayes deve receber um conjunto de dados de treino, e um conjunto de testes para averiguar a precisão de classificação \cite{ZhangandLi2007Bayes}. Esses conjuntos de dados serão escolhidos de forma aleatória \textbf{dentro de uma fatia} do total comentários coletados, sendo aproximadamente 50\% para treino e 50\% para teste. %O tamanho do conjunto de treino é menor dada a grande quantidade de comentários já coletados até o momento, e o fato de que estes comentários de treino serão classificados manualmente.
+O classificador Naïve Bayes recebe um conjunto de dados de treino, e um conjunto de testes para averiguar a precisão do modelo de classificação \cite{ZhangandLi2007Bayes}. Esses conjuntos de dados foram escolhidos de forma aleatória dentre os comentários obtidos para o vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]}, sendo utilizados aproximadamente 50\% (32.131) para grupo de treino e 50\% (32.130) para grupo de testes. 
+
+Utilizando a SentiStrength obteve-se inicialmente uma classificação automática do grupo de treino. Essa classificação foi averiguada pelo autor e melhorada, afim de tornar o modelo mais preciso. Por exemplo, comentários identificados erroneamente como pejorativos foram trocados manualmente para neutros e vice-versa.
 
 \subsection{Avaliação do Modelo de Classificação}
-O conhecimento extraído na fase de mineração de dados pode gerar uma grande quantidade de padrões \cite{morais2007mineraccao}.
+%O conhecimento extraído na fase de mineração de dados pode gerar uma grande quantidade de padrões \cite{morais2007mineraccao}.
 
-O modelo gerado é enfim testado utilizando os comentários que não foram utilizados na fase de treino. 
-A avaliação do modelo é feita através da ferramenta Scikit Learn, que fornece métodos de score prontos para as medidas de \textit{precision} e \textit{recall}. %preciso mencionar elas lá em cima, quando for falar do scikit. % talvez colocar alguma referencia aqui seja bom tb
+O modelo gerado é enfim testado utilizando os comentários que não foram utilizados na fase de treino, ou seja, utilizando os comentários selecionados para compor o conjunto de teste. 
+
+O modelo também foi utilizado nos outros grupos de comentários obtidos, afim de obter a classificação para os outros vídeos analisados. Vale notar que para estes conjunto de comentários a única etapa não realizada dentre os procedimentos mencionados neste Capítulo foi a geração do modelo, ou seja, estes comentários foram pré-processados, classificados pela ferramente SentiStrength, analisados pelo autor, classificados pelo modelo de classificação e por fim tiveram os resultados obtidos comparados com o esperado.
+
+A avaliação do modelo é feita através da ferramenta Scikit Learn, que fornece métodos de \textit{score} prontos para as medidas de \textit{precision} e \textit{recall}. Os resultados da avaliação são apresentados no Capítulo 6.
+
+%preciso mencionar elas lá em cima, quando for falar do scikit. % talvez colocar alguma referencia aqui seja bom tb
 
 %O modelo de classificação gerado agora pode ser testado utilizando todos os comentários que foram coletados afim de chegar as conclusões sobre os tipos de comentários realizados em vídeos infantis e o grau de segurança da seção de comentários de cada vídeo.
 \begin{comment}
@@ -78,7 +84,7 @@ Nessa etapa, iremos avaliar os resultados do processamento dos comentários, agr
 
 \subsection{Criação de extensão para Google Chrome}
 
-Ao obter um modelo de classificação, e em posse da avaliação dos comentários obtidos, foi desenvolvida uma extensão do navegador da web Google Chrome que se utiliza de um \textit{Web Service} que retorna a margem de comentários negativos e positivos para o vídeo sendo assistido naquele momento. 
+Ao obter o modelo de classificação, foi desenvolvida uma extensão do navegador da web Google Chrome que se utiliza de um \textit{Web Service} que retorna a margem de comentários negativos e positivos para o vídeo sendo assistido naquele momento. 
 
 Caso os comentários do vídeo ainda não tenham sido classificados, o serviço irá iniciar um procedimento automático de classificação, tornando os resultados disponíveis dentro de no máximo algumas horas.
 
@@ -94,9 +100,10 @@ A Figura \ref{fig:chrome_plugin} mostra um exemplo de classificação retornada 
 \end{figure}
 
 Os códigos da extensão \footnote{https://github.com/ssisaias/safe-youtube} e do serviço web \footnote{https://github.com/ssisaias/safe-youtube-service}, estão disponíveis publicamente e podem ser encontrados na plataforma Github.
+\textcolor{green}{posso falar que não é o foco da pesquisa a avaliação da extensão, e que é tipo algo como um bônus, um produto?}
 
 \begin{comment}
-\textit{A última seção dos procedimentos é o cronograma. Apresente a versão que entregará à banca ao final do semestre. Se seus procedimentos não estiverem organizados em subseções, esta será a subseção 4.1. Após ler, remova este texto explicativo.}
+\textit{A última Seção dos procedimentos é o cronograma. Apresente a versão que entregará à banca ao final do semestre. Se seus procedimentos não estiverem organizados em subseções, esta será a subseção 4.1. Após ler, remova este texto explicativo.}
 \end{comment}
 
 % TCC 2 - remove cronograma

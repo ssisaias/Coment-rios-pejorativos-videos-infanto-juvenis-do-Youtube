@@ -1,8 +1,9 @@
 \section{RESULTADOS}
 
-Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, no período de 27 de Setembro de 2017 à 22 de Novembro de 2017 e no dia 15/05/2018. Por estar em posse de um dataset extenso, o autor não realizou coletas posteriores. 
+Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, no período de 27 de Setembro de 2017 à 22 de Novembro de 2017, bem como foram adicionados os comentários do dia 15/05/2018. 
+A coleta do dia 15/05 foi realizada para obter comentários de vídeos com público-alvo adolescente, até então não obtidos. Por estar em posse de um conjunto de dados extenso, o autor não realizou coletas posteriores. % - para obter os comentários de videos com publico alvo adolescente.
 
-A tabela \ref{resultados-pre-comentarios} apresenta os dados detalhados da base adquirida.
+A Tabela \ref{resultados-pre-comentarios} apresenta os dados detalhados da base adquirida.
 
 \begin{table}[H]
 	\Caption{\label{resultados-pre-comentarios} Comentários obtidos}%
@@ -22,23 +23,37 @@ Não Faz Sentido! - Crepúsculo [+13] & 15.768.111 & 15/05/2018 07:14 & 57.103 \
 \Fonte{Elaborado pelo autor}
 \end{table}
 
-Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser o adolescente, o grupo de treino e de testes da classificação partiu dele.
+Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser composto por adolescentes, o conjunto de treino e de testes da classificação partiu dele. \textcolor{green}{Também foi observado o fato do vídeo destinado ao público juvenil possuir maior quantidade de comentários pejorativos}.
 
-Seguindo a métrica de 50\% de comentários para treino e teste do classificador, foram utilizados 32131 comentários para treino e 32130 comentários para teste. 
+Como descrito no Capítulo 5, o modelo gerado foi utilizado em todos os comentários obtidos, tendo sido a etapa de geração do modelo de classificação, o único passo a ser executado somente uma vez. Além disso, apesar do grupo a partir do qual foi gerado o modelo de classificação ter partido de apenas um vídeo, os comentários negativos são similares dentre todos os vídeos, seja de conteúdo infantil ou juvenil.
+\begin{comment}
+\textcolor{red}{Não entendi Isaias, como você calculou recall e precision dos comentários dos outros projetos, se você não os avaliou com a SentiStregth... ou avaliou? Isso não fica claro e gera algumas dúvidas. Além disso, é bom dizer que mesmo que você tenha usado somente de um tipo de video, os comentários para criar o modelo e o testar, você tem comentários similares nos outros vídeos...}
+\textcolor{pink}{I: Todos foram avaliados com Sentistrength, vou deixar mais explicito aqui e também na metodologia. Sobre os comentários similares, irei mencionar.}
+\end{comment}
+Seguindo a metodologia de 50\% de comentários para treino e 50\% para teste do classificador, foram utilizados 32.131 comentários para treino e 32.130 comentários para teste. 
 
 Na Tabela \ref{resultados-precision} estão os valores de \textit{precision}, descritos por vídeo, após a classificação. Os valores são obtidos com o uso da biblioteca \textit{sklearn-metrics} \cite{scikit-learn}. A coluna \textbf{precision-pos} descreve a precisão de acerto do classificador para a classe positiva (ou neutra), enquanto a coluna \textbf{precision-neg} descreve a precisão de acerto do classficador para a classe negativa, onde estão os termos pejorativos.
 
-Na tabela \ref{resultados-recall} Estão os valores de \textit{recall}, também descritos por vídeo e classe. A coluns \textbf{recall-pos} descreve a pontuação de \textit{recall} para a classe posivita (ou neutra), enquanto a coluna \textbf{recall-neg} descreve a pontuação de recall para a classe negativa (termos pejorativos).
+Na Tabela \ref{resultados-recall} estão os valores de \textit{recall}, também descritos por vídeo e classe. A coluna \textbf{recall-pos} descreve a pontuação de \textit{recall} para a classe de comentários positivos (ou neutra), enquanto a coluna \textbf{recall-neg} descreve a pontuação de recall para a classe de comentários pejotarivos.
 
 
-\textit{Precision} pode ser definido como o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Positivos-Verdadeiros e Positivos-Negativos
+%\textcolor{red}{Chamar de negativo de pejorativo parece pouco intuitivo. Uma vez que desejamos saber se um vídeo contem comentários pejorativos ou não. O que você acha?} - I: Sim, me convenceu;
+
+
+%\textit{Precision} pode ser definido como o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Positivos-Verdadeiros e Positivos-Negativos (ou seja,aqueles que foram classificados como negativo 
+
+\textit{Precision} pode ser definida para a classe de comentários positivos, por exemplo, como a proporção do número de acertos pelo modelo na classe positiva pelo número de instâncias que foram classificadas como positiva pelo modelo. 
+
+\textcolor{red}{Por favor, explique melhor o que é $T_P$ e $F_P$, pode até buscar no livro do Tan} <- Buscando.
 
 \begin{equation}
 \label{eq:precision-descr}
  {P} = \frac{{T_p}}{{T_p}+{F_p}}
 \end{equation}
 
-Enquanto \textit{recall} é o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Posivitos-Verdadeiros e Falso-Negativos
+%Enquanto \textit{recall} é o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Posivitos-Verdadeiros e Falso-Negativos
+
+Enquanto o \textit{recall}, corresponde a proporção do número de acertos, por exemplo, da classe positiva divido pelo que é realmente positivo.
 
 \begin{equation}
 \label{eq:recall-descr}
