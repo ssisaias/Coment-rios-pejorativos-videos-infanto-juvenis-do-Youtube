@@ -33,14 +33,8 @@ A metodologia da Figura \ref{fig:ammari-metodologia} consiste em:
 
 Os resultados apresentados por \cite{ammari2011filteringYt} indicam um alta taxa de acerto dos classificadores para os comentários obtidos e pré-processados com a metodologia proposta, sendo 86,7\% de corretude para o algoritmo C4.5 e 83,7\% para o Naïve Bayes Multinomial.
 
-%Esse parágrafo vai pra tabela.
-\begin{comment}
-A principal diferença entre \cite{ammari2011filteringYt} e este trabalho é que apesar de focar inicialmente em vídeos infantis, este trabalho é capaz de aplicar o modelo em qualquer comentário de vídeo do Youtube, assim como em vídeos ao-vivo ou \textit{live-streaming}. Dessa forma, expandindo o domínio de aplicação. 
-Este trabalho irá  utilizar de uma gama maior de comentários visto que o modelo de \cite{ammari2011filteringYt} foi testado apenas com 17 vídeos da plataforma e um total de 1159 comentários. \textcolor{blue}{Este trabalho pretende avaliar pelo menos 30 mil comentários de vídeos pertencentes a canais considerados de conteúdo infantil como \textbf{Telmo e Tula, desenhos animados} e \textbf{Galinha Pintadinha}, além de vídeos de programas infantis como \textbf{Peppa Pig} postados por usuários em canais diversos.
-}
-\end{comment}
+A principal diferença entre \cite{ammari2011filteringYt} e este trabalho é que apesar de focar inicialmente em vídeos com público infantil e adolescente, este trabalho é capaz de aplicar o modelo em qualquer grupo de comentários de vídeos do Youtube. Dessa forma, expandindo o domínio de aplicação. Considerando também que modelo de \cite{ammari2011filteringYt} foi testado com 17 vídeos da plataforma porém um total de 1159 comentários, este trabalho avaliou um total de 87.094 comentários pertencentes a canais difundidos entre jovens e crianças, como \textbf{Galinha Pintadinha} e \textbf{Felipe Neto}.
 
-\textcolor{red}{A comparação entre o trabalho de \citeonline{ammari2011filteringYt} e o seu???}
 
 \citeonline{schultes2013leave} afirmam em seu texto que comentários em vídeos do Youtube são, de forma geral, mal vistos pelo público: em uma pesquisa com 95 participantes, 64\% consideram comentários do Youtube "irrelevantes", 42\% consideram agressivos e 51\% os consideram "estúpidos", sendo que somente 6\% dos entrevistados consideram os comentários em vídeos do Youtube "De essencial importância". Por outro lado, \citeonline{schultes2013leave} também afirma que 34\% dos entrevistados leem os comentários dos vídeos e que 53\% lê os primeiros três comentários antes de começar a assistir o vídeo, além de estimar um total de 96 milhões de autores de comentários ativos na plataforma, chegando a conclusão de que a seção de comentários em vídeos do Youtube é uma funcionalidade essencial e uma das mais usadas em vídeos online. Levando esses fatores antagônicos em consideração, \cite{schultes2013leave} primeiramente procura verificar se comentários em vídeos do Youtube geram algum valor agregado e como medir esse valor. \cite{schultes2013leave} também prova que através dos comentários é também possível obter uma análise semântica do vídeo em questão. 
 
@@ -51,7 +45,9 @@ No período de 15/03/2012 à 21/03/2012, \cite{schultes2013leave} coletou um tot
    \item \textbf{Comentários substanciais:} Comentários não ofensivos que contém informação relevante e estão relacionados com o tema do vídeo em questão.
 \end{itemize}
 Após definir os tipos de comentários, ainda foram definidos dez subtipos a fim de tornar a classificação mais concisa. % Esses 10 tipos foram omitidos a fim de manter a brevidade desse texto.
-Durante a validação do seu \textit{Dataset}, \citeonline{schultes2013leave} concluiram que "não existe um tipo de comentário dominante em vídeos do Youtube" e também que "30\% dos comentários são do tipo \textbf{Comentários inferiores}, o que pode explicar a má impressão dos usuários em relação aos comentários em vídeos do Youtube.
+Durante a validação do seu \textit{Dataset}, \citeonline{schultes2013leave} concluiram que "não existe um tipo de comentário dominante em vídeos do Youtube"\ e também que "30\% dos comentários são do tipo \textbf{Comentários inferiores}\", o que pode explicar a má impressão dos usuários em relação aos comentários em vídeos do Youtube.
+
+Apesar de ter utilizado um grupo maior de comentários do que este trabalho, \citeonline{schultes2013leave}, os vídeos obtidos são de diversas categorias tornando o modelo gerado menos específico.
 
 %Mario falcao
 Sobre proteção de crianças online, \citeonline{marioFalcao2016} aborda em sua pesquisa o problema da falta de acompanhamento por parte dos pais, quanto a utilização da internet por seus filhos. 
@@ -62,26 +58,27 @@ Em comparação, o foco deste trabalho não é detectar possíveis aliciadores, 
 %EnyoGonçalves
 \cite{EnyoGoncalves2017} estende o trabalho de \cite{marioFalcao2016}, buscando detectar automaticamente quando uma mensagem suspeita é trocada entre uma criança e um adulto. O algoritmo de classificação utilizado é Naive Bayes Multinomial \cite{metsis2006spamBayes}.
 
-Os dados utilizados para treinar o modelo com mensagens "perigosas" foram coletados do site: \footnote{http://www.perverted-justice.com}. Os dados com mensagens consideradas "normais" foram retirados do site: \footnote{http://vircio.net}. Foram utilizadas 1610 mensagens ao todo, com um total de 9450 palavras, para as quais o Naive Bayes Multinomial obteve uma taxa de acerto de 86,33\%. Após aplicar o modelo em conversa real entre uma criança e um suspeito de aliciamento, \cite{EnyoGoncalves2017} mostrou que seu modelo é mais robusto que o de \cite{marioFalcao2016}, pois pode detectar frases de aliciadores fora de contexto e além disso, detecta frases como um todo e não somente palavras-chave.
+Os dados utilizados para treinar o modelo com mensagens "perigosas"\ foram coletados do site: \footnote{http://www.perverted-justice.com}. Os dados com mensagens consideradas "normais"\  foram retirados do site: \footnote{http://vircio.net}. Foram utilizadas 1610 mensagens ao todo, com um total de 9450 palavras, para as quais o Naive Bayes Multinomial obteve uma taxa de acerto de 86,33\%. Após aplicar o modelo em conversa real entre uma criança e um suspeito de aliciamento, \cite{EnyoGoncalves2017} mostrou que seu modelo é mais robusto que o de \cite{marioFalcao2016}, pois pode detectar frases de aliciadores fora de contexto e além disso, detecta frases como um todo e não somente palavras-chave.
 
 A tabela, a seguir, apresenta uma comparação entres os trabalhos citados anteriormente e este trabalho em questão:
-% eu poderia fazer duas tabelas (uma pra os dois de mineração e uma para os do marcos antonio) maybe
+
+
 \begin{table}[H]
-	\Caption{\label{tabela-trabalhos} Dados de coletas de comentários realizadas}%
+	\Caption{\label{tabela-trabalhos} Comparação entre trabalhos relacionados e este trabalho}%
 	{%
-		\begin{tabular}{p{3cm}ccp{4.5cm}} %{p{3cm}ccp{4.5cm}} não fica maior que o texto, horizontalmente
+		\begin{tabular}{p{4cm}p{5cm}p{6cm}} %{p{3cm}ccp{4.5cm}} não fica maior que o texto, horizontalmente
 			\toprule
-			Trabalho & Mineração de Texto & Proteção de crianças &  Objetivo\\
+			Trabalho & Tipo de Aplicação &  Objetivo \\
 			\midrule \midrule
-    		\cite{ammari2011filteringYt} & Sim & Não & Filtrar comentários do Youtube com pouco valor semântico.\\
+    		\cite{ammari2011filteringYt} & Minerar comentários do Youtube & Filtrar comentários do Youtube com pouco valor semântico.\\
     		\hline	
-			\cite{schultes2013leave} & Sim & Não & Verificar a relevância de comentários do Youtube.\\
+			\cite{schultes2013leave} & Minerar comentários do Youtube & Verificar a relevância de comentários do Youtube.\\
 			\hline
-			\cite{marioFalcao2016} & Sim & Sim & Medir nível de exposição de crianças no Facebook.\\
+			\cite{marioFalcao2016} & Proteção de crianças online & Medir nível de exposição de crianças no Facebook.\\
 			\hline
-			\cite{EnyoGoncalves2017} & Não & Sim & Detectar facilmente aliciadores de crianças na internet.\\
+			\cite{EnyoGoncalves2017} & Proteção de crianças online & Detectar facilmente aliciadores de crianças na internet.\\
 			\hline
-			Este trabalho & Sim & Sim & Verificar se um comentário de vídeo do Youtube é adequado ou não para crianças.\\
+			Este trabalho & Mineração de comentários do Youtube e proteção de crianças online & Verificar se um comentário de vídeo do Youtube é adequado ou não para crianças.\\
 			\bottomrule
 		\end{tabular}%
 	}{%
@@ -90,7 +87,8 @@ A tabela, a seguir, apresenta uma comparação entres os trabalhos citados anter
 \end{table}
 
 
-
+\begin{comment}
 \textcolor{red}{Duas observações sobre essa tabela de comparação de trabalhos relacionados: \\
-1. Prefira não deixar as colunas com valores binários. Ao invés de a coluna proteção de crianças, colocar tipo de aplicação. E como valor ao invés de sim e não descrever qual tipo de aplicação que pode ser proteção da criança.\\ % ok
-2. Por mais que você tenha colocado aqui as diferenças e semelhancas entre o seu trabalho e os relacionados, é necessário você descrever essa semelhanças e diferenças em algum paragrafo.} % ok
+1. Prefira não deixar as colunas com valores binários. Ao invés de a coluna proteção de crianças, colocar tipo de aplicação. E como valor ao invés de sim e não descrever qual tipo de aplicação que pode ser proteção da criança.\\ <- Concluido
+2. Por mais que você tenha colocado aqui as diferenças e semelhancas entre o seu trabalho e os relacionados, é necessário você descrever essa semelhanças e diferenças em algum paragrafo.} <- Checando
+\end{comment}

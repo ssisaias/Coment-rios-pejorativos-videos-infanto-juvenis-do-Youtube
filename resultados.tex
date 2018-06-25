@@ -3,11 +3,11 @@
 Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, no período de 27 de Setembro de 2017 à 22 de Novembro de 2017, bem como foram adicionados os comentários do dia 15/05/2018. 
 A coleta do dia 15/05 foi realizada para obter comentários de vídeos com público-alvo adolescente, até então não obtidos. Por estar em posse de um conjunto de dados extenso, o autor não realizou coletas posteriores. % - para obter os comentários de videos com publico alvo adolescente.
 
-A Tabela \ref{resultados-pre-comentarios} apresenta os dados detalhados da base adquirida.
+A Tabela \ref{resultados-pre-comentarios} apresenta os meta dados da base adquirida, como nome dos vídeos,  visualizações no momento da coleta, data da coleta e quantidade de comentários obtidos.
 
 \begin{table}[H]
-	\Caption{\label{resultados-pre-comentarios} Comentários obtidos}%
-	
+	\Caption{\label{resultados-pre-comentarios} Vídeos selecionados e comentários obtidos}%
+%META-DADOS	
 \begin{tabular}{|p{5.5cm}|c|c|c|}
 \hline
 \textbf{Título do Vídeo} & \textbf{Visualizações} & \textbf{Data da Coleta} & \textbf{Comentários obtidos} \\ \hline
@@ -23,7 +23,30 @@ Não Faz Sentido! - Crepúsculo [+13] & 15.768.111 & 15/05/2018 07:14 & 57.103 \
 \Fonte{Elaborado pelo autor}
 \end{table}
 
-Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser composto por adolescentes, o conjunto de treino e de testes da classificação partiu dele. \textcolor{green}{Também foi observado o fato do vídeo destinado ao público juvenil possuir maior quantidade de comentários pejorativos}.
+Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser composto por adolescentes, o conjunto de treino e de testes da classificação partiu dele. 
+
+% Tabela 3
+A Tabela \ref{resultados-qtd-commentarios-classes} a quantidade de comentários obtidos em cada classe, para cada vídeo analisado.
+
+\begin{table}[H]
+	\Caption{\label{resultados-qtd-commentarios-classes} Quantidade de comentários em cada classe por vídeo}%
+%Comentarios positivos x negativos	
+\begin{tabular}{|p{5.5cm}|c|c|}
+\hline
+\textbf{Título do Vídeo} & \textbf{Neutros} & \textbf{Pejorativos} \\ \hline
+PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 11.152 & 517 \\ \hline
+Galinha Pintadinha 4 - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.217 & 103 \\ \hline
+UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4 & 2.654 & 144 \\ \hline
+Pintinho Amarelinho - DVD Galinha Pintadinha & 11.407 & 1.499 \\ \hline
+Galinha Pintadinha 3 - Trailer - OFICIAL & 277 & 21 \\ \hline
+Não Faz Sentido! - Crepúsculo [+13] & 21.066 & 11.064 \\ \hline
+
+\end{tabular}
+
+\Fonte{Elaborado pelo autor}
+\end{table}
+
+%Também foi observado o fato do vídeo destinado ao público juvenil possuir maior quantidade de comentários pejorativos}. <- SUPORTAR ISSO COM A TABELA QUE ESTOU CRIANDO AGORA
 
 Como descrito no Capítulo 5, o modelo gerado foi utilizado em todos os comentários obtidos, tendo sido a etapa de geração do modelo de classificação, o único passo a ser executado somente uma vez. Além disso, apesar do grupo a partir do qual foi gerado o modelo de classificação ter partido de apenas um vídeo, os comentários negativos são similares dentre todos os vídeos, seja de conteúdo infantil ou juvenil.
 \begin{comment}
@@ -31,6 +54,8 @@ Como descrito no Capítulo 5, o modelo gerado foi utilizado em todos os comentá
 \textcolor{pink}{I: Todos foram avaliados com Sentistrength, vou deixar mais explicito aqui e também na metodologia. Sobre os comentários similares, irei mencionar.}
 \end{comment}
 Seguindo a metodologia de 50\% de comentários para treino e 50\% para teste do classificador, foram utilizados 32.131 comentários para treino e 32.130 comentários para teste. 
+
+Em relação à analise de dados com conjuntos de dados de entrada desbalanceados, para um modelo de classificicação, \citeonline{tan2009DataMining} afirma que as métricas de \textbf{\textit{precision}} e \textbf{\textit{recall}} se sobressaem à métrica de \textit{taxa de acertos}, pois esta última não considera o peso das classes sendo analisadas.
 
 Na Tabela \ref{resultados-precision} estão os valores de \textit{precision}, descritos por vídeo, após a classificação. Os valores são obtidos com o uso da biblioteca \textit{sklearn-metrics} \cite{scikit-learn}. A coluna \textbf{precision-pos} descreve a precisão de acerto do classificador para a classe positiva (ou neutra), enquanto a coluna \textbf{precision-neg} descreve a precisão de acerto do classficador para a classe negativa, onde estão os termos pejorativos.
 
@@ -42,9 +67,11 @@ Na Tabela \ref{resultados-recall} estão os valores de \textit{recall}, também 
 
 %\textit{Precision} pode ser definido como o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Positivos-Verdadeiros e Positivos-Negativos (ou seja,aqueles que foram classificados como negativo 
 
+Nas definições a seguir, $T_p$ (\textit{True positive} ou positivo verdadeiro) indica o número de comentários da classe de comentários positivos (neutros) que foram corretamente detectados como positivos; $F_n$ (\textit{False negative} ou falso negativo) denota a quantidade de comentários pejorativos detectados erroneamente como positivos; $F_p$ (\textit{False positive} ou falso positivo) indica a quantidade de comentários pejorativos detectados erroneamente como positivos; e $T_n$ (\textit{True negative} ou negativo verdadeiro) indica a quantidade de comentários pejorativos detectados corretamente \cite{tan2009DataMining}.
+
 \textit{Precision} pode ser definida para a classe de comentários positivos, por exemplo, como a proporção do número de acertos pelo modelo na classe positiva pelo número de instâncias que foram classificadas como positiva pelo modelo. 
 
-\textcolor{red}{Por favor, explique melhor o que é $T_P$ e $F_P$, pode até buscar no livro do Tan} <- Buscando.
+%\textcolor{red}{Por favor, explique melhor o que é $T_P$ e $F_P$, pode até buscar no livro do Tan} <- Buscando. <- Done
 
 \begin{equation}
 \label{eq:precision-descr}
