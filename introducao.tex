@@ -8,16 +8,14 @@ A internet é uma rede mundial que interliga milhões de computadores em todo o 
 Essas crianças adquirem habilidades diferentes das crianças de antigamente: enquanto uma criança da década de 80 possuía uma maior facilidade para construir ou modelar um brinquedo, as crianças da geração atual possuem habilidades para lidar com a informática, devido ao convívio rotineiro com a mesma \cite{marioFalcao2016}.
 
 % Motivação para utilização do Youtube
-A plataforma de vídeos Youtube é o segundo site mais acessado do mundo \cite{alexaYoutube}. Em tal plataforma, é possível postar e compartilhar vídeos com uma enorme e abrangente gama de conteúdos, servindo também como site de buscas. É possível encontrar conteúdo musical, \textit{vlogs}, animações, curta-metragens, conteúdo educativo, conteúdo com público alvo adulto e conteúdo voltado especificamente ao público jovem e infantil. 
+A plataforma de vídeos Youtube é o segundo site mais acessado do mundo \cite{alexaYoutube}. Em tal plataforma, é possível postar e compartilhar vídeos com uma enorme e abrangente gama de conteúdos, servindo também como site de buscas. É possível encontrar conteúdo musical, \textit{vlogs}, animações, curta-metragens, conteúdo educativo, conteúdo com público alvo adulto e conteúdo voltado especificamente ao público jovem e infantil, como por exemplo os canais \textbf{Felipe Neto} \footnote{https://www.youtube.com/channel/UCV306eHqgo0LvBf3Mh36AHg} e \textbf{Galinha Pintadinha} \footnote{https://www.youtube.com/channel/UCBAb\_DK4GYZqZR9MFA7y2Xg}.
 
-Como parte de suas características de rede social, o Youtube disponibiliza, em seus vídeos, a possibilidade de usuários comentarem. Porém, tendo em vista as crianças e adolescentes estão conectadas na rede cada vez mais cedo \cite{EnyoGoncalves2017} ao navegar pela plataforma em vídeos infantis, nota-se que há uma certa liberdade para realizar comentários de qualquer natureza, até mesmo ofensivos ou inapropriados para o público o qual o vídeo é destinado, um exemplo disso pode ser visto na Figura \ref{fig:youtube_comment}.
+Como parte de suas características de rede social, o Youtube disponibiliza, em seus vídeos, a possibilidade de usuários comentarem. Porém, tendo em vista as crianças e adolescentes estão conectadas na rede cada vez mais cedo \cite{EnyoGoncalves2017}, ao navegar pela plataforma em vídeos infantis, nota-se que há uma certa liberdade para realizar comentários de qualquer natureza, até mesmo ofensivos ou inapropriados para o público o qual o vídeo é destinado, um exemplo disso pode ser visto na Figura \ref{fig:youtube_comment}.
 
-% Qual a problemática dos comentários negativos em vídeos infantis. Era bom ter referências de artigos para isso. % ainda n achei
-% solution -> ECA
-Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral da criança e do adolescente, abrangendo a preservação da imagem, da identidade, da autonomia, dos valores, ideias e crenças, dos espaços e objetos pessoais." \cite{eca_lei}.  Assim, é possível através da tecnologia buscar meios para proteger moralmente e psiquicamente o público mais jovem que utiliza a plataforma. %Esse final não ta legal %
+Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral da criança e do adolescente, abrangendo a preservação da imagem, da identidade, da autonomia, dos valores, ideias e crenças, dos espaços e objetos pessoais." \cite{eca_lei}.  Assim, é possível através da tecnologia buscar meios para proteger moralmente e psiquicamente o público mais jovem que utiliza a plataforma. 
 
 \begin{figure}[H] %use h para forçar que a figura fique abaixo do texto
-	\caption{\label{fig:youtube_comment} Comentário do Youtube}
+	\caption{\label{fig:youtube_comment} Comentário em um vídeo infantil no Youtube}
 	\begin{center}
 	    \includegraphics[scale=1]{figuras/figura_1.png} % altere o atributo scale para o tamanho da figura
 	\end{center}
@@ -25,17 +23,16 @@ Segundo o artigo 17 do \textbf{Estatuto da Criança e do Adolescente} (ECA): "O 
 %Verificar se precisa por a data aqui 
 \end{figure}
 
-A Figura \ref{fig:youtube_comment} foi retirada do vídeo \textbf{UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4}, um vídeo direcionado à crianças de 2 a 7 anos postado pelo canal \emph{Galinha Pintadinha}, que é direcionado ao público infantil. %Explicar o comentário que pode ser visualizado e interpretado pela criança. Também seria bom referências para isso. %N.A. (28nov2017) não encontrei referências para "crianças palavrão"; checar os links abaixo:
+A Figura \ref{fig:youtube_comment} foi retirada do vídeo \textbf{UPA CAVALINHO - Clipe Música Oficial - Galinha Pintadinha DVD 4}, um vídeo direcionado à crianças de 2 a 7 anos postado pelo canal \emph{Galinha Pintadinha}, que é direcionado ao público infantil. Por questões de anonimato o usuário não é identificado. %Explicar o comentário que pode ser visualizado e interpretado pela criança. Também seria bom referências para isso. %N.A. (28nov2017) não encontrei referências para "crianças palavrão"; checar os links abaixo:
 %http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2214.2011.01338.x/full
 %http://www.tandfonline.com/doi/abs/10.1080/01434630408666529
 %procurar tb por children+swear words.
 %Talvez colocar uma imagem do vídeo do felipe neto
 
 
-Dessa forma, o problema abordado neste trabalho é identificar comentários pejorativos semelhantes ao apresentado na Figura \ref{fig:youtube_comment} em vídeos postados no Youtube, com público alvo infantil e adolescente. Para solucionar tal problema, primeiramente foi utilizadas algumas ferramentas escritas na linguagem \textit{Python}, uma para coleta dos comentários, outra para o pré-processamento desses comentários, e por fim uma última que auxilia na criação e avaliação do modelo, essas ferramentas são descritas mais a fundo no Capítulo 5. 
+O objetivo deste trabalho é identificar comentários pejorativos semelhantes ao apresentado na Figura \ref{fig:youtube_comment} em vídeos postados no Youtube, direcionados à crianças e adolescentes. Para alcançar este objetivo, primeiramente foi criado um script na linguagem \textit{Python}, para coleta de comentários dos vídeos através da API do Youtube. Outro script \textit{Python} também foi utilizado para realizar o pré-processamento dos comentários, através da biblioteca de processamento de linguagem natural \textbf{NLTK}. Com o \textit{dataset} de comentários coletados e pré-processados, foi criado um modelo de classificação utilizando as ferramentas \textbf{SentiStrength} e \textbf{scikit-learn}. A \textbf{scikit-learn} também foi utilizada para avaliar a eficiência do modelo criado. A utilização das ferramentas é descrita de forma detalhada no Capítulo 5. 
 
-O modelo elaborado foi então utilizado na elaboração de um plugin, ou extensão, para o navegador da internet Google Chrome, a fim de mostrar em tempo real, os resultados da classificação realizada naquele vídeo.  % Como tu vai fazer isso? Tem que explicar aqui. Para que? O que tu vai fazer com esses comentários? Soluções para denunciar os comentários.
-% Para que e para quem  esse estudo vai servir? Escrever um parágrafo sobre isso.
+Utilizando tecnologias web (HTML, CSS, Javascript), foi desenvolvido também uma extensão para o navegador da web \textbf{Google Chrome}. A extensão exibe os resultados da classificação previamente realizada, para o vídeo sendo assistido naquele momento. Os dados da classificação ficam salvos em um banco de dados. 
 
 %Falar das ferramentas que serão utilizadas
 
