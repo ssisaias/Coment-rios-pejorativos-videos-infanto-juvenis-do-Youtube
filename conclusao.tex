@@ -1,15 +1,25 @@
 \newpage
-\section{CONCLUSÃO}
+\section{CONCLUSÃO E TRABALHOS FUTUROS}
+O problema que o trabalho propôs solucionar é o de classificar comentários em vídeos destinados à crianças e adolescentes, tendo em conta a baixa moderação que ocorre nesses comentários, e a incidência de ofensas e termos de baixo calão. 
 
-% \textcolor{red}{utilize os verbos em terceira pessoa do singular ou do plural, nunca em primeira pessoa.}  <- Corrigindo
+Através do modelo elaborado foi possível verificar que vídeos destinados especificamente a crianças não possuem um quantidade alta de comentários ofensivos. Segundo a Tabela \ref{resultados-qtd-commentarios-classes}, o vídeo \textbf{PARABÉNS DA GALINHA PINTADINHA - Clipe Música Oficial - Galinha Pintadinha DVD 4} do \textbf{Canal Galinha Pintadinha}, possui aproximadamente 95,56\% comentários neutros e apenas 4,44\% comentários pejorativos.
 
-A partir dos resultados apresentados nota-se que o classificador possui uma alta taxa de \textit{precision} para a classe positiva, enquanto apresenta taxas menores para a classe de comentários pejorativos, onde se encontram os termos pejorativos.
+Por outro lado, vídeos destinados a adolescentes possuem uma taxa bem maior de comentários negativos, tendo em vista que os comentários do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} do \textbf{Canal Felipe Neto} foram classificados com uma taxa de 65,56\% de comentários neutro e 34,43\% de comentários pejorativos.
 
-Essa diferença se dá principalmente pela quantidade de comentários negativos detectados e presentes, pois se pode ver na tabela \ref{resultados-qtd-commentarios-classes}, vídeos com público alvo infantil possuem menor quantidade de comentários negativos detectados.
+O modelo não foi amplamente aplicado em vários vídeos, tendo em conta a quantidade de comentários já coletados e o tempo necessário para a realização do trabalho. Mas em contrapartida, a utilização da extensão diminui esse peso, viso que com ela, é possível classificar outros vídeos no Youtube.
 
-Por outro lado, a pontuação de \textit{recall} para comentários negativos foi satisfatória para 4 dos 6 vídeos analisados, mostrando que dentre os comentários pejorativos de fato existentes, o classificador gerado conseguiu detectar corretamente sua maior parte. Novamente é possível notar que as menores taxas de \textit{recall} se dão nos vídeos com menos comentários e com menor quantidade de comentários negativos, vide Tabela \ref{resultados-qtd-commentarios-classes}.%criar tabela.
+Os dados obtidos e o modelo gerado são considerados úteis para a classificação de comentários pejorativos de vídeos no Youtube, mais precisamente vídeos com público alvo adolescente. O que torna relevante o uso da extensão criada para o navegador da web Google Chrome, principalmente quando o uso é direcionado a adolescentes.
 
-% não sei se posso falar algo do tipo: vídeos infantis tem menor taxa de comentários ofensivos enquanto que vídeos com público adolescente tem maior taxa de comentários ofensivos.
 
-Logo nota-se que quanto mais comentários o vídeo apresentar, maior a taxa de acerto eventos de comentários negativos e maior a relevância da classificação realizada.
-Os dados obtidos podem ser de fato considerados úteis para a classificação de comentários pejorativos de vídeos no Youtube, mais precisamente vídeos com público alvo adolescente. O que torna relevante o uso da extensão criada para o navegador da web Google Chrome.
+Com o objetivo de aumentar a relevância da pesquisa, algumas melhorias podem ser realizadas, principalmente no que diz respeito à aplicação das técnicas utilizadas, assim como na extensão desenvolvida:
+
+\begin{alineas}
+    
+    \item Aumentar o número de vídeos classificados;
+    \item Avaliar o uso da extensão criada, assim como realizar melhorias de UX e trazer para outros navegadores;
+    \item Permitir que o público avalie a classificação realizada, tornando classificação mais precisa;
+    \item Melhorar o modelo de classificação criado através do \textit{feedback} obtido;
+    
+\end{alineas}
+
+\newpage

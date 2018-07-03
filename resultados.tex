@@ -1,12 +1,11 @@
 \newpage
 \section{RESULTADOS}
 
-Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente, no período de 27 de Setembro de 2017 à 22 de Novembro de 2017, bem como foram adicionados os comentários do dia 15/05/2018. 
-A coleta do dia 15/05 foi realizada para obter comentários de vídeos com público-alvo adolescente, até então não obtidos. Por estar em posse de um conjunto de dados extenso, o autor não realizou coletas posteriores. % - para obter os comentários de videos com publico alvo adolescente.
+Foram coletados 87.094 comentários ao todo, dentre 5 vídeos infantis e 1 vídeo com público adolescente.
+A Tabela \ref{resultados-pre-comentarios} apresenta os meta dados da base adquirida: nome dos vídeos,  total de visualizações no momento da coleta, data da coleta e quantidade de comentários por vídeo.
 
-A Tabela \ref{resultados-pre-comentarios} apresenta os meta dados da base adquirida, como nome dos vídeos,  visualizações no momento da coleta, data da coleta e quantidade de comentários obtidos.
-
-\begin{table}[H]
+\begin{table}[H] \footnotesize
+\centering
 	\Caption{\label{resultados-pre-comentarios} Vídeos selecionados e comentários obtidos}%
 %META-DADOS	
 \begin{tabular}{|p{5.5cm}|c|c|c|}
@@ -27,9 +26,10 @@ Não Faz Sentido! - Crepúsculo [+13] & 15.768.111 & 15/05/2018 07:14 & 57.103 \
 Por conta do vídeo \textbf{Não Faz Sentido! - Crepúsculo [+13]} ser o com maior quantidade de comentários e devido ao seu público alvo ser composto por adolescentes, o conjunto de treino e de testes da classificação partiu dele. 
 
 % Tabela 3
-A Tabela \ref{resultados-qtd-commentarios-classes} a quantidade de comentários obtidos em cada classe, para cada vídeo analisado.
+A Tabela \ref{resultados-qtd-commentarios-classes} exibe a quantidade de comentários obtidos em cada classe, para cada vídeo analisado. Esse total é obtido através do método \textit{classification\_report()} presente na biblioteca \textit{scikit-learn}.
 
-\begin{table}[H]
+\begin{table}[H] \footnotesize
+\centering
 	\Caption{\label{resultados-qtd-commentarios-classes} Quantidade de comentários em cada classe por vídeo}%
 %Comentarios positivos x negativos	
 \begin{tabular}{|p{5.5cm}|c|c|}
@@ -47,16 +47,14 @@ Não Faz Sentido! - Crepúsculo [+13] & 21.066 & 11.064 \\ \hline
 \Fonte{Elaborado pelo autor}
 \end{table}
 
-%Também foi observado o fato do vídeo destinado ao público juvenil possuir maior quantidade de comentários pejorativos}. <- SUPORTAR ISSO COM A TABELA QUE ESTOU CRIANDO AGORA
-
-Como descrito no Capítulo 5, o modelo gerado foi utilizado em todos os comentários obtidos, tendo sido a etapa de geração do modelo de classificação, o único passo a ser executado somente uma vez. Além disso, apesar do grupo a partir do qual foi gerado o modelo de classificação ter partido de apenas um vídeo, os comentários negativos são similares dentre todos os vídeos, seja de conteúdo infantil ou juvenil.
+Como foi descrito no Capítulo 6, o modelo gerado foi utilizado em todos os comentários obtidos, com exceção dos comentários utilizados no grupo de treino, tendo sido a etapa de geração do modelo de classificação, o único passo a ser executado somente uma vez. Além disso, apesar do grupo a partir do qual foi gerado o modelo de classificação ter partido de apenas um vídeo, os comentários negativos são similares dentre todos os vídeos, seja de conteúdo infantil ou juvenil.
 \begin{comment}
 \textcolor{red}{Não entendi Isaias, como você calculou recall e precision dos comentários dos outros projetos, se você não os avaliou com a SentiStregth... ou avaliou? Isso não fica claro e gera algumas dúvidas. Além disso, é bom dizer que mesmo que você tenha usado somente de um tipo de video, os comentários para criar o modelo e o testar, você tem comentários similares nos outros vídeos...}
 \textcolor{pink}{I: Todos foram avaliados com Sentistrength, vou deixar mais explicito aqui e também na metodologia. Sobre os comentários similares, irei mencionar.}
 \end{comment}
 Seguindo a metodologia de 50\% de comentários para treino e 50\% para teste do classificador, foram utilizados 32.131 comentários para treino e 32.130 comentários para teste. 
 
-Em relação à analise de dados com conjuntos de dados de entrada desbalanceados, para um modelo de classificicação, \citeonline{tan2009DataMining} afirma que as métricas de \textbf{\textit{precision}} e \textbf{\textit{recall}} se sobressaem à métrica de \textit{taxa de acertos}, pois esta última não considera o peso das classes sendo analisadas.
+Em relação à analise de dados com conjuntos de dados de entrada desbalanceados, para um modelo de classificicação, \cite{tan2009DataMining} afirma que as métricas de \textbf{\textit{precision}} e \textbf{\textit{recall}} se sobressaem à métrica de \textit{taxa de acertos}, pois esta última não considera o peso das classes sendo analisadas.
 
 Na Tabela \ref{resultados-precision} estão os valores de \textit{precision}, descritos por vídeo, após a classificação. Os valores são obtidos com o uso da biblioteca \textit{sklearn-metrics} \cite{scikit-learn}. A coluna \textbf{precision-pos} descreve a precisão de acerto do classificador para a classe positiva (ou neutra), enquanto a coluna \textbf{precision-neg} descreve a precisão de acerto do classficador para a classe negativa, onde estão os termos pejorativos.
 
@@ -79,16 +77,16 @@ Nas definições a seguir, $T_p$ (\textit{True positive} ou positivo verdadeiro)
  {P} = \frac{{T_p}}{{T_p}+{F_p}}
 \end{equation}
 
-%Enquanto \textit{recall} é o número de (eventos) Positivos-Verdadeiros dividido pela soma entre Posivitos-Verdadeiros e Falso-Negativos
 
 Enquanto o \textit{recall}, corresponde a proporção do número de acertos, por exemplo, da classe positiva divido pelo que é realmente positivo.
 
 \begin{equation}
 \label{eq:recall-descr}
- {P} = \frac{{T_p}}{{T_p}+{F_n}}
+ {R} = \frac{{T_p}}{{T_p}+{F_n}}
 \end{equation}
 
-\begin{table}[H]
+\begin{table}[H] \footnotesize
+\centering
 	\Caption{\label{resultados-precision} Resultados de \textit{precision}}%
 	
 \begin{tabular}{|p{5.5cm}|c|c|c|}
@@ -105,7 +103,8 @@ Não Faz Sentido! - Crepúsculo [+13] & 31.130 & 0.88 & 0.71\\ \hline
 \Fonte{Elaborado pelo autor}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[H] \footnotesize
+\centering
 	\Caption{\label{resultados-recall} Resultados de \textit{recall}}%
 	
 \begin{tabular}{|p{5.5cm}|c|c|c|}
@@ -122,6 +121,8 @@ Não Faz Sentido! - Crepúsculo [+13] & 31.130 & 0.83 & 0.79\\ \hline
 \Fonte{Elaborado pelo autor}
 \end{table}
 
-\begin{comment}
-As ferramentas que serão utilizadas para mineração e classificação serão o scikit-learn\footnote{http://scikit-learn.org} e Natural Language Toolkit\footnote{http://www.nltk.org/} (NLTK). NLTK é uma ferramenta para criação de programas em Python para processamento de linguagem humana. scikit-learn é um framework de aplicações multi-propósito, que pode também ser utilizado para pré-processamento, mineração e análise de dados. 
-\end{comment}
+A partir dos resultados apresentados nota-se que o classificador possui uma alta taxa de \textit{precision} para a classe positiva, enquanto apresenta taxas menores para a classe de comentários pejorativos, onde se encontram os termos pejorativos.
+
+Essa diferença se dá principalmente pela quantidade de comentários negativos detectados e presentes, pois pode-se notar na Tabela \ref{resultados-qtd-commentarios-classes}, vídeos com público alvo infantil possuem menor quantidade de comentários negativos detectados.
+
+Por outro lado, a pontuação de \textit{recall} para comentários negativos foi satisfatória para 4 dos 6 vídeos analisados, mostrando que dentre os comentários pejorativos de fato existentes, o classificador gerado conseguiu detectar corretamente sua maior parte. Novamente, é possível notar que as menores taxas de \textit{recall} se dão nos vídeos com menos comentários e com menor quantidade de comentários negativos, vide Tabela \ref{resultados-qtd-commentarios-classes}.

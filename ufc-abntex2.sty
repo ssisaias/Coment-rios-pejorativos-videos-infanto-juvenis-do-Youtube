@@ -33,50 +33,56 @@
 % alterando a capa
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
-    \center
-\begin{figure}[H]
+  % Todos os elementos da capa devem esta centralizado
+  \center
+  % Todos os elementos da capa devem esta em negrito
+  \bfseries
+  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{ufc-brasao.pdf}
   \end{figure}
-    %{\bfseries\Large\imprimirinstituicao\vspace*{3.5cm}}
-    {\bfseries\Large\imprimiries}  \\
-    \vspace*{0.2cm}
-    {\bfseries\Large\imprimircampus} \\
-    \vspace*{0.2cm}
-	{\bfseries\Large\imprimircurso}
+    \vspace{-0.4cm}
+	\MakeUppercase{\imprimiries} \\
+	\MakeUppercase{\imprimircampus} \\
+	\MakeUppercase{\imprimircurso} \\
+    %{\bfseries\Large\imprimiries}  \\
+    %\vspace*{0.2cm}
+    %{\bfseries\Large\imprimircampus} \\
+    %\vspace*{0.2cm}
+	%{\bfseries\Large\imprimircurso}
 
-    \vspace*{3.5cm}
+    \vspace{\onelineskip}
 
-    {\bfseries\Large\imprimirtitulo}
-    
-    \vspace*{3.5cm}
-    
-    %{\bfseries\Large{Projeto de Pesquisa}}
-    
-    \vspace*{3.5cm}
+	\vspace{2.0cm}
+
+	\MakeUppercase{\imprimirautor}
+	
+	\vspace{3.0cm}
+	
+	\MakeUppercase{\imprimirtitulo}
 
     %{\bfseries\Large\imprimirautor\vspace*{3.5cm}}
  
-    \abntex@ifnotempty{\imprimirorientador}{%
-      \hspace{.45\textwidth}
-      \begin{minipage}{\textwidth}
-      \flushright
-      \SingleSpacing
-      \bfseries\imprimirautor
-      \vspace*{\baselineskip}
-      \SingleSpacing
-      \bfseries{Orientador: \\ \imprimirorientador}
-      \SingleSpacing
-      \abntex@ifnotempty{\imprimircoorientador}{%
-        \bfseries{Co-Orientador: \\ \imprimircoorientador}
-      }%
-      \end{minipage}%
-      \vspace*{\fill}
-    }%
+    %\abntex@ifnotempty{\imprimirorientador}{%
+    %  \hspace{.45\textwidth}
+    %  \begin{minipage}{\textwidth}
+    %  \flushright
+    %  \SingleSpacing
+    %  \bfseries\imprimirautor
+    %  \vspace*{\baselineskip}
+    %  \SingleSpacing
+    %  \bfseries{Orientadora: \\ \imprimirorientador}
+    %  \SingleSpacing
+    %  \abntex@ifnotempty{\imprimircoorientador}{%
+    %    \bfseries{Co-Orientador: \\ \imprimircoorientador}
+    %  }%
+    %  \end{minipage}%
+    %  \vspace*{\fill}
+    %}%
 
-    {\bfseries\Large\imprimirlocal}
-    \par
-    {\bfseries\Large\imprimirdata}
+    \vfill
+	\normalsize\MakeUppercase\imprimirlocal\par	
+	\normalsize\imprimirdata
 
     \vspace*{1cm}
   \end{capa}
@@ -89,11 +95,11 @@
 
 \renewcommand{\folhaderostocontent}{
 \begin{center}
-{\bfseries\Large\imprimirautor}
+{\MakeUppercase\imprimirautor}
 
 \vspace*{3.5cm}
 
-{\bfseries\Large\imprimirtitulo}
+{\MakeUppercase\imprimirtitulo}
 
 \vspace*{\fill}
 
@@ -109,7 +115,7 @@
   \hspace{.45\textwidth}
   \begin{minipage}{.5\textwidth}
   \SingleSpacing
-  Orientador: \imprimirorientador
+  Orientadora: \imprimirorientador
   \SingleSpacing
   \abntex@ifnotempty{\imprimircoorientador}{%
     Co-Orientador: \imprimircoorientador
@@ -120,9 +126,9 @@
 
 \vspace*{\fill}
 
-{\bfseries\Large\imprimirlocal}
+{\MakeUppercase\imprimirlocal}
 \par
-{\bfseries\Large\imprimirdata}
+{\imprimirdata}
 \vspace*{1cm}
 \end{center}
 }

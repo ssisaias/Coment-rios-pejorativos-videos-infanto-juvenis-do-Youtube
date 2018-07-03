@@ -11,27 +11,40 @@
 %
 \begin{folhadeaprovacao}
 
-  \begin{center}
-    {\bfseries\Large\imprimirautor}
-    \vspace{1cm}
-
     \begin{center}
-      \bfseries\Large\imprimirtitulo
-    \end{center}
+		\MakeUppercase{\imprimirautor}\par
+		\vspace{\onelineskip}
+	    \vspace{2cm}
+		\vspace{\onelineskip}
+		\MakeUppercase{\imprimirtitulo}
+	\end{center}
 
-    \vspace{2cm}
-    \begin{minipage}{\textwidth}
-        \imprimirpreambulo
-        \\ \\ \\
-        Aprovada em: \_\_/\_\_/\_\_\_\_
-    \end{minipage}%
+    \vspace{\onelineskip}
+	\vspace{2cm}
+	\vspace{\onelineskip}
+	
+	%Retira o espaco do paragrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\begin{SingleSpace}
+			\imprimirpreambulo \\			
+		\end{SingleSpace}		
+	\end{minipage}
+
+	\vspace{\onelineskip}
+		
+	\noindent Aprovada em: \_\_/\_\_/\_\_\_\_
+	
+	\vspace{\onelineskip}
      
     \vspace{2cm}
 	\textbf{BANCA EXAMINADORA}
-   \end{center}
+   
 	
 
-   \assinatura{\imprimirorientador \space (Orientador) \\ Universidade Federal do Ceará (UFC)}
+   \assinatura{\imprimirorientador \space (Orientadora) \\ Universidade Federal do Ceará (UFC)}
    %\assinatura{\imprimircoorientador \space (Co-Orientador) \\ Universidade Federal do Ceará (UFC)}
    %DEFINA AQUI OS DEMAIS MEMBROS DA BANCA
    \assinatura{Prof. Msc. Regis Pires Magalhães \\ Universidade Federal do Ceará (UFC)}

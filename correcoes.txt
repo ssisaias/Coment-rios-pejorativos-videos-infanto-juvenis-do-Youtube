@@ -1,19 +1,6 @@
 Correções:
 
-- Na fundamentação teórica, Seção abordagem de dados, você só fala da Análise semântica de forma superficial. É necessário aprofundar o texto para versão final. Mesma coisa para seção preparação dos dados.
-- Na Seção Indexação e Normalizacão, deve ser detalhado os passos da Figura 3.
-- No cálculo de termos, explicar os tipos de frequência e qual o tipo de cálculo que você vai utilizar no trabalho.
-- Explicar qual técnica você vai utilizar para seleção dos termos e detalhar.
 - Na Seção, processamento em linguagem natural explicar a técnica NLP. Detalhar como ela é utilizada.
-- Seria bom também retirar o que não é utilizado no trabalho. (ficar somente com os conceitos que foram utilizados.)
-- Falar de Multinomial Naïve Bayes
 
-- Nos trabalhos relacionados, não é necessário detalhar os trabalhos. Deve-se apenas explicar as diferenças e semelhanças como o seu trabalho.
-- Nos procedimentos metodológicos, só precisa da Figura para indicar os passos.
-- As etapas da metodologia você tem que dizer o que pretende fazer, é planejamento. Em outra seção você deveria explicar detalhadamente cada etapa como se realizou, e não só colocar uma seção de resultados.
-- Você descreve que foram coletados os comentários de 6 vídeos, mas não detalha os processos. Além disso, você deve explicar na análise o que significam os resultados de precision e recall, fazendo análise para cada vídeo. 
-- O plugin também deve ser detalhado.
-- O que tem na conclusão deveria estar descrito na Análise dos resultados.
-- Na conclusão deve ser descrito o que o trabalho se propôs a fazer, os benefícios, as limitações e os  trabalhos futuros.
+- Nos trabalhos relacionados, não é necessário detalhar os trabalhos. Deve-se apenas explicar as diferenças e semelhanças com o seu trabalho.
 
-- Muitos erros de escrita. Nem tive coragem de ajeitar tudo. Vi que a Ticiana na versão do sharelatex já tinha comentado a maioria.
