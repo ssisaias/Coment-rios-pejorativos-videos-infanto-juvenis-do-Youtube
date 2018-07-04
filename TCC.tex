@@ -72,6 +72,7 @@
 
 % Agradecimentos
 \include{editaveis/agradecimentos}
+%\imprimiragradecimentos{editaveis/agradecimentos}
 
 % Epígrafe
 \include{editaveis/epigrafe}
@@ -83,11 +84,14 @@
 %\include{resumo/es}
 
 % Lista de ilustrações
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\clearpage
+%\pdfbookmark[0]{\listfigurename}{lof}
+%\listoffigures*
+%\clearpage
+\renewcommand*\listfigurename{\normalfont\normalsize\bfseries Lista de Ilustrações}
+\imprimirlistadeilustracoes
 
 % Lista de tabelas
+\renewcommand*\listtablename{\normalfont\normalsize\bfseries Lista de Tabelas}
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage

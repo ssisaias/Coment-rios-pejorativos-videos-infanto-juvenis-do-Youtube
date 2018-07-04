@@ -1,6 +1,5 @@
 %%
 %% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade Federal do Ceará
-%% Utilização somente para TCC 1
 %% 
 %% 
 
@@ -15,6 +14,7 @@
 \newcommand{\imprimircampus}{\@campus}
 \newcommand{\membroumname}{Membro um:}
 \newcommand{\membrodoisname}{Membro dois:}
+
 
 % Comandos de dados - Membro da banca um
 \providecommand{\imprimirmembroumRotulo}{}
@@ -183,12 +183,14 @@ BANCA EXAMINADORA
 \usepackage{bookmark}
     
 \newcommand{\imprimirsumario}{
-    \renewcommand{\contentsname}{\normalfont\bfseries SUMÁRIO}
+    
+    \renewcommand{\contentsname}{\normalsize\normalfont\bfseries SUMÁRIO}
 	\pdfbookmark[0]{Sumário}{toc}
+	
 	\tableofcontents*
 	\cleardoublepage
 }
-% Modifica o espaçamento no sumário
+% Modifica o espaçamento VERTICAL no sumário
 % Nao ha espacos
 \setlength{\cftbeforeparagraphskip}{0pt}
 \setlength{\cftbeforesubsectionskip}{0pt}
@@ -200,6 +202,7 @@ BANCA EXAMINADORA
 \renewcommand\cftsectionfont{\normalsize\normalfont\bfseries}
 \renewcommand\cftsubsectionfont{\normalsize}
 \renewcommand\cftsubsubsectionfont{\normalsize\normalfont}
+\renewcommand\cftsubsubsubsectionfont{\normalsize\normalfont}
 % Altera a fonte da seção quinária
 \renewcommand*{\cftparagraphfont}{\normalsize\normalfont\itshape}
 
@@ -207,26 +210,18 @@ BANCA EXAMINADORA
 \renewcommand\cftchapterpagefont{\normalfont}
 \renewcommand\cftsectionpagefont{\normalfont}
 \renewcommand\cftsubsectionpagefont{\normalfont}
+
 % Altera a fonte da seção quinária
 \renewcommand\cftparagraphpagefont{\normalfont}
 
-% Secao Secundaria (Section): Caixa alta, Não Negrito, tamanho 12
 \makeatletter
-\let\oldcontentsline\contentsline
-\def\contentsline#1#2{%
-	\expandafter\ifx\csname l@#1\endcsname\l@section %
-	\expandafter\@firstoftwo %
-	\else %
-	\expandafter\@secondoftwo %
-	\fi %
-	{%
-		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
-	}{%
-	\oldcontentsline{#1}{#2}%
-}%
-}
+\def\toclevel@subsubsubsection{4}
+\renewcommand*\l@section{\normalfont\bfseries\@dottedtocline{1}{1em}{2em}}
+\renewcommand*\l@subsection{\@dottedtocline{1}{1em}{2.5em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{1}{1em}{2.5em}}
 \makeatother
-
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{3}    % how many sectioning levels to show in ToC
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,3 +285,16 @@ BANCA EXAMINADORA
 \newcommand{\UFCfig}[3]{\IBGEtab{#1}{#2}{#3}}
 \newcommand{\UFCtab}[3]{\IBGEtab{#1}{#2}{#3}}
 \newcommand{\UFCqua}[3]{\IBGEtab{#1}{#2}{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Ilustracoes        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A lista de Ilustracoes não deve aparecer no sumario
+
+\newcommand{\imprimirlistadeilustracoes}{
+	\begin{KeepFromToc} %
+		\listoffigures\pagebreak %
+	\end{KeepFromToc} %
+}
