@@ -1,14 +1,17 @@
 % resumo em português
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
- Segundo a NBR6028:2003, o resumo deve ressaltar o
- objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
 
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+%\begin{resumoo}
+
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+
+\begin{resumo}[\normalfont\normalsize\bfseries\MakeUppercase RESUMO]
+ A Internet, rede mundial de computadores, conecta cada vez mais pessoas ao redor do mundo. Em um dos sites mais acessados do mundo, a plataforma de vídeos Youtube, é notável a participação ativa de jovens e crianças nos comentários dos vídeos. Também é notável a quantidade de ofensas direcionadas aos usuários, nesses comentários. Quando os vídeos são direcionados às crianças e adolescentes, isso pode influenciar negativamente os jovens e ferir o Estatuto da Criança e do Adolescente brasileiro que afirma: "Deve ser respeitado a integridade física, moral e psíquica da criança e do adolescente". 
+ Com o objetivo de detectar se um vídeo no Youtube, direcionado aos jovens, possui muitos comentários negativos desenvolvemos um classificador textual Naïve Bayes e uma extensão para o navegador Google Chrome, que indica a taxa de comentários pejorativos contidos no vídeo.
+ Para analisar comentários de vídeos do Youtube e montar o modelo de classificação textual, foram utilizadas ferramentas de mineração e classificação de dados NLTK, scikit-learn e SentiStrength. Para auxiliar e automatizar os passos de coleta e extração dos comentários de vídeos do Youtube, o autor desenvolveu vários scripts na linguagem Python. Uma extensão para Google Chrome foi desenvolvida, utilizando tecnologias web, para aproveitar os dados de classificação gerados, e facilitar a realização de novas classificações.
+ Ao total, 87.094 comentários foram coletados, e 62.121 foram analisados, apresentando 48.773 comentários considerados neutros e 13.348 comentários considerados pejorativos.
+ Observou-se que vídeos direcionados à crianças não possuem altas taxas de comentários negativos, e por outro lado, vídeos direcionados a jovens, possuem uma taxa de 34\% de comentários pejorativos, ou seja vídeos direcionados à adolescentes possuem mais termos ofensivos em seus comentários.
+ 
+
+ \textbf{Palavras-chaves}: Sistema de Recuperação da Informação. Mineração de Dados. Proteção de Crianças e Adolescentes.
 \end{resumo}
+%\end{resumoo}
